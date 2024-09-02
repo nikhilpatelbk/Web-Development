@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ambition DX Rental Website</title>
+    <link rel="stylesheet" href="styles.css" href="C:\Users\patel\OneDrive\Desktop\NIKI\HTML\ambition Dx.html\rental.html">
+</head>
+<body>
+    <header class="header-background">
+    <img src="C:\Users\patel\Downloads\ambition1.jpg">  
+    <img src="C:\Users\patel\Downloads\japan map.jpg"> </img.image-padding>
+     <h2> Ambitious Rental Website</h2></header>
+</body>
+</html>
+<body>
+        <nav>
+            <ul>
+                <li><a href="C:\Users\patel\OneDrive\Desktop\NIKI\HTML\ambition Dx.html\index.html">Home</a></li>
+                <li><a href="C:\Users\patel\OneDrive\Desktop\NIKI\HTML\ambition Dx.html\rental.html">Rental</a></li>
+                <li><a href="https://pm.am-bition.jp.e.apz.hp.transer.com/rent/2436" target="_blank">Contact</a></li>
+                <li><a href="https://maps.app.goo.gl/1KR9nHsA7ER98W5W9" target="_blank">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Find Your Perfect Rental's</h2>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search rentals...">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section class="rentals">
+            <h2>Available Rentals</h2>
+            <div id="rentalList">
+                <!-- Rental items will be dynamically added here -->
+        </section>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2024 Rental Website</p>
+    </footer>
+    <footer>
+        <p>&copy;
+            <p>contact: 635 253 163</p>
+            <p> Copy riights 2024 @ Ambition DX</p>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+
+    background-color: #fc1717;
+    color: rgb(248, 11, 11);
+    padding: 1rem;
+    text-align: center;
+
+.header-background {
+    background-image:url('C:\Users\patel\Downloads\ambition1.jpg'); /* Replace with your image path */
+    background-size: center;  /* Makes the image cover the entire header */
+    background-position: center;  /* Centers the image */
+    height: 300px;  /* Adjust the height of the header as needed */
+    color: white;  /* Text color for visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;}
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.rentals {
+    padding: 2rem;
+}
+
+.rental-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f34c4c;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+.rentals {
+    padding: 2rem;
+}
+
+.rental-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+footer{
+        visibility: hidden;
+}
+footer{
+    background-color: #fc1414;
+    color: white;
+    text-align: downright;
+    padding: 2%;
+    position: right;
+    width: 100%;
+    height: 2%;
+    bottom: 0;
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const rentalList = document.getElementById('rentalList');
+
+    const rentals = [
+        { id: 1, name: 'Cozy Apartment', description: 'A cozy apartment in the city center.', price: '¥120000/month' },
+        { id: 2, name: 'Beach House', description: 'A beautiful house by the beach.', price: '¥250000/month' },
+        { id: 3, name: 'Lavish House', description: 'A Lavish house with semi furnished.', price: '¥200000/month' },
+        { id: 4, name: 'Mountain Cabin', description: 'A cabin with a stunning mountain view.', price: '¥180000/month' }
+    ];
+
+    function renderRentals() {
+        rentalList.innerHTML = '';
+        rentals.forEach(rental => {
+            const rentalItem = document.createElement('div');
+            rentalItem.className = 'rental-item';
+            rentalItem.innerHTML = `
+                <h3>${rental.name}</h3>
+                <p>${rental.description}</p>
+                <p><strong>${rental.price}</strong></p>
+            `;
+            rentalList.appendChild(rentalItem);
+        });
+    }
+
+    renderRentals();
+
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const filteredRentals = rentals.filter(rental => rental.name.toLowerCase().includes(searchInput));
+        renderFilteredRentals(filteredRentals);
+    });
+
+    function renderFilteredRentals(filteredRentals) {
+        rentalList.innerHTML = '';
+        filteredRentals.forEach(rental => {
+            const rentalItem = document.createElement('div');
+            rentalItem.className = 'rental-item';
+            rentalItem.innerHTML = `
+                <h3>${rental.name}</h3>
+                <p>${rental.description}</p>
+                <p><strong>${rental.price}</strong></p>
+            `;
+            rentalList.appendChild(rentalItem);
+        });
+    }
+});
